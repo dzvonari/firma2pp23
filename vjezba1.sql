@@ -12,23 +12,23 @@ insert into osoba(ime,prezime,email) values
 ('Shaquille','O''Neal','shaki@gmail.com');
 
 insert into osoba(ime,prezime,email) values
-('Danko','Šimiæ','dankosimic@gmail.com'),
-('Franko','Vekiæ','franko.vekic@gmail.com'),
-('Antonio','Hofšuster','ahofsuster@gmail.com'),
-('Matija','Prša','prsa.matija@gmail.com'),
-('Darko','Luketiæ','darko.luketic81@gmail.com'),
-('Rade','Jasenovèanin','rade.jasenovcanin@yahoo.com'),
-('Ante','Filipoviæ','ante.filipovic72@gmail.com'),
-('Antonia','èiæin-æapin','antonia.cicincapin@gmail.com'),
-('Miroslav','Naranèiæ','miro.narancic@gmail.com'),
-('Tomislav','Sabolæ?','sabolic55@gmail.com'),
-('Stefan','Babiæ','stefan.babic.vu@gmail.com'),
-('Filip','Janjeæi?','filip.janjesic@gmail.com'),
-('Edita','Keækiæ','edita.keskic@gmail.com'),
-('Ranko','Vukeliæ','rvukelic@gmail.com'),
+('Danko','Å imiÄ‡','dankosimic@gmail.com'),
+('Franko','VekiÄ‡','franko.vekic@gmail.com'),
+('Antonio','HofÅ¡uster','ahofsuster@gmail.com'),
+('Matija','PrÅ¡a','prsa.matija@gmail.com'),
+('Darko','LuketiÄ‡','darko.luketic81@gmail.com'),
+('Rade','JasenovÄanin','rade.jasenovcanin@yahoo.com'),
+('Ante','FilipoviÄ‡','ante.filipovic72@gmail.com'),
+('Antonia','ÄiÄ‡in-Ä‡apin','antonia.cicincapin@gmail.com'),
+('Miroslav','NaranÄiÄ‡','miro.narancic@gmail.com'),
+('Tomislav','SabolÄ‡?','sabolic55@gmail.com'),
+('Stefan','BabiÄ‡','stefan.babic.vu@gmail.com'),
+('Filip','JanjeÄ‡i?','filip.janjesic@gmail.com'),
+('Edita','KeÄ‡kiÄ‡','edita.keskic@gmail.com'),
+('Ranko','VukeliÄ‡','rvukelic@gmail.com'),
 ('Tomislav','Nebes','tomislav.nebes@gmail.com'),
 ('Josip','Harci','harcijosip99@gmail.com'),
-('Denis','Zvonariæ','dzvonari@gmail.com');
+('Denis','ZvonariÄ‡','dzvonari@gmail.com');
 
 insert into predavac (osoba) values (1),(2);
 
@@ -53,7 +53,53 @@ insert into clan values
 
 select * from clan;
 
+
+
 select * from smjer;
 
 update smjer set trajanje=130
 where sifra=1;
+
+update smjer set trajanje=130, certifikat=true 
+where sifra=2;
+
+update smjer set cijena=cijena*0.9
+where sifra=1 and 2;
+
+update smjer set cijena=1000
+where sifra=2;
+
+select * from smjer;
+
+update smjer set cijena=cijena*1.1;
+
+update smjer set cijena=cijena-345.99 where sifra=1;
+
+update smjer set cijena=cijena*0.9 where sifra=1;
+
+select * from osoba;
+
+insert into osoba(ime,prezime,email) values ('Denis','Denis','denis@gmail.com'),('Marko','Marko','marko@gmail.com'),('Ivica','Ivica','ivica@gmail.com');
+
+select * from osoba;
+
+delete from osoba where sifra>21;
+
+#select lista
+# zvjezdica znaÄ‡i prikaÅ¾i sve kolone
+
+select naziv, cijena from smjer;
+
+select ime as xx, oib as GS from osoba;
+
+select lower(right(ime,7)), upper(left(ime,6)) from osoba;
+
+#filtriranj redova
+
+show tables;
+
+select * from osoba;
+
+select * from osoba where sifra in (3,7);
+
+select * from osoba where ime like 'd%%S';
